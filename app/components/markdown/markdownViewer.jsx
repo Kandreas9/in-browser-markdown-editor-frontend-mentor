@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Docs } from "@/app/context/context";
 
 import {
@@ -11,12 +11,14 @@ import {
 } from "@milkdown/core";
 import { nord } from "@milkdown/theme-nord";
 import { Milkdown, useEditor } from "@milkdown/react";
+import { replaceAll } from "@milkdown/utils";
 import { commonmark } from "@milkdown/preset-commonmark";
+// import { listener, listenerCtx } from "@milkdown/plugin-listener";
 
 export default function MarkdownViewer() {
     const { docs } = useContext(Docs);
 
-    const { editor } = useEditor((root) =>
+    const editor = useEditor((root) =>
         Editor.make()
             .config(nord)
             .config((ctx) => {
@@ -24,11 +26,20 @@ export default function MarkdownViewer() {
                 ctx.set(defaultValueCtx, docs.content);
                 ctx.update(editorViewOptionsCtx, (prev) => ({
                     ...prev,
-                    editable: false,
+                    attributes: {
+                        class: "flex-1 h-full prose dark:prose-invert font-robotoSlab",
+                    },
+                    editable: () => false,
                 }));
             })
             .use(commonmark)
     );
+
+    useEffect(() => {
+        if (editor.loading === false) {
+            editor.get().action(replaceAll(docs.content));
+        }
+    }, [docs, editor]);
 
     return <Milkdown />;
 }

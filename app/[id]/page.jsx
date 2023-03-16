@@ -2,18 +2,18 @@
 
 import { useContext, useEffect } from "react";
 import { Docs } from "../context/context";
+import MarkdownViewMode from "../components/markdown/markdownViewMode";
 
 export default function Home({ params }) {
     const { docs, documents, setDocs } = useContext(Docs);
 
     useEffect(() => {
-        if (documents) {
-            const doc = documents.find((e) => e.id == params.id);
-            if (doc) {
-                setDocs(doc);
-            }
+        const doc = documents.find((e) => e.id == params.id);
+        if (doc) {
+            console.log("Actual update", doc);
+            setDocs(doc);
         }
     }, [documents]);
 
-    return <div className="font-robotoSlab">{docs.name}</div>;
+    return <MarkdownViewMode></MarkdownViewMode>;
 }

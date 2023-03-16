@@ -7,7 +7,7 @@ export const Docs = createContext(null);
 function Context({ children }) {
     const [docs, setDocs] = useState({
         name: "Untitled Document",
-        content: "",
+        content: "# Welcome to Markdown",
     });
     const documents = useLiveQuery(() => documentTable.toArray());
 
@@ -22,6 +22,8 @@ function Context({ children }) {
             console.error(`Failed to add document: ${err}`);
         }
     };
+
+    if (!documents) return null;
 
     return (
         <Docs.Provider value={{ documents, saveDocument, docs, setDocs }}>

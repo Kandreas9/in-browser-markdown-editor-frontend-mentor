@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
                 <Context>
                     <Sidebar isMenuOpen={isMenuOpen}></Sidebar>
 
-                    <div className="overflow-x-hidden w-screen">
+                    <div className="overflow-hidden w-screen">
                         <Header
                             handleMenuClick={handleMenuClick}
                             isMenuOpen={isMenuOpen}
