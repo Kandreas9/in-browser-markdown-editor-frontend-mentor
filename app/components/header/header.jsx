@@ -20,16 +20,24 @@ export default function Header({ handleMenuClick, isMenuOpen }) {
             {isMenuOpen ? (
                 <button
                     onClick={() => handleMenuClick(false)}
-                    className="w-[56px] h-[56px] p-[19px] bg-gray-600 flex-none"
+                    className="w-[56px] h-[56px] md:h-[72px] md:w-[72px] p-[19px] md:py-[25px] md:px-[25px] bg-gray-600 flex-none"
                 >
-                    <Image alt="exit" src={exit} height={18} width={18}></Image>
+                    <Image
+                        className="md:h-[23px] md:w-[23px]"
+                        alt="exit"
+                        src={exit}
+                    ></Image>
                 </button>
             ) : (
                 <button
                     onClick={() => handleMenuClick(true)}
-                    className="w-[56px] h-[56px] py-[21px] px-[17px] bg-gray-600 flex-none"
+                    className="w-[56px] h-[56px] md:h-[72px] md:w-[72px] py-[21px] px-[17px] md:px-[21px] md:py-[27px] bg-gray-600 flex-none"
                 >
-                    <Image alt="menu" src={menu} height={13} width={23}></Image>
+                    <Image
+                        className="md:h-[18px] md:w-[30px]"
+                        alt="menu"
+                        src={menu}
+                    ></Image>
                 </button>
             )}
 

@@ -7,11 +7,14 @@ export default function FileRename() {
     const { docs, documents, setDocs } = useContext(Docs);
 
     return (
-        <div className="flex min-w-fit gap-[1rem] mx-[24px] my-auto">
-            <Image alt="file" src={file} width={14} height={16}></Image>
-            <label className="text-gray-400">
-                <span className="hidden">Document Name</span>
+        <div className="flex flex-1 items-center min-w-fit gap-[1rem] mx-[24px] my-auto">
+            <Image className="h-[16px] w-[14px]" alt="file" src={file}></Image>
+            <label className="text-gray-400 flex-1">
+                <span className="hidden md:block font-roboto font-light text-[13px]">
+                    Document Name
+                </span>
                 <input
+                    style={{ width: "-webkit-fill-available" }}
                     className="
                         bg-transparent 
                         font-roboto 
