@@ -11,12 +11,12 @@ export default function Sidebar({ isMenuOpen }) {
 
     return (
         <aside
-            className={`bg-gray-800 h-screen flex-none transition-width ${
+            className={`bg-gray-800 overflow-hidden h-screen flex-none transition-width ${
                 !isMenuOpen ? "w-0" : "w-[250px]"
             }`}
         >
             {isMenuOpen && (
-                <div className="px-[24px] h-full flex flex-col justify-between">
+                <div className="px-[24px] w-[250px] h-full flex flex-col justify-between">
                     <div>
                         <h1 className="py-[27px]">
                             <Image
