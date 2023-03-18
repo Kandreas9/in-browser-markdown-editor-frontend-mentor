@@ -2,7 +2,8 @@
 
 import { Roboto, Roboto_Slab, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 import Context from "./context/context";
 import Header from "./components/header/header";
@@ -16,11 +17,17 @@ const robotoSlab = Roboto_Slab({
 const robotoMono = Roboto_Mono({ weight: ["400"], variable: "--roboto-mono" });
 
 export default function RootLayout({ children }) {
+    const pathname = usePathname();
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleMenuClick = (bool) => {
         setIsMenuOpen(bool);
     };
+
+    useEffect(() => {
+        handleMenuClick(isMenuOpen ? false : isMenuOpen);
+    }, [pathname]);
 
     return (
         <html
@@ -29,7 +36,10 @@ export default function RootLayout({ children }) {
         >
             <body className="bg-gray-900 text-white flex ">
                 <Context>
-                    <Sidebar isMenuOpen={isMenuOpen}></Sidebar>
+                    <Sidebar
+                        handleMenuClick={handleMenuClick}
+                        isMenuOpen={isMenuOpen}
+                    ></Sidebar>
 
                     <div className="overflow-hidden w-screen">
                         <Header

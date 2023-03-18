@@ -7,7 +7,6 @@ import AddDocumentButton from "../addDocumentButton";
 
 export default function Sidebar({ isMenuOpen }) {
     const { documents } = useContext(Docs);
-    console.log(documents);
 
     return (
         <aside
