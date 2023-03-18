@@ -8,8 +8,36 @@ div[data-milkdown-root] {
 
 .milkdown {
     width: 100%;
-    background: #151619;
     height: 100%;
     padding: 16px;
     overflow-wrap: break-word;
+}
+
+.dark .milkdown {
+    background: #151619;
+}
+
+.light .milkdown {
+    background: white;
+}
+
+.preview {
+    height: 11px;
+    width: 16px;
+}
+
+.light .preview {
+    color: #7c8187;
+}
+
+.dark .preview {
+    color: #c1c4cb;
+}
+
+.light .moon {
+    color: #5a6069;
+}
+
+.dark .sun {
+    color: #5a6069;
 }

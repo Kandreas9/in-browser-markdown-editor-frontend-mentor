@@ -4,6 +4,7 @@ import { Roboto, Roboto_Slab, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { ThemeProvider } from "next-themes";
 
 import Context from "./context/context";
 import Header from "./components/header/header";
@@ -34,12 +35,14 @@ export default function RootLayout({ children }) {
             className={`${roboto.variable} ${robotoSlab.variable} ${robotoMono.variable}`}
             lang="en"
         >
-            <body className="bg-gray-900 text-white flex ">
+            <body className="bg-white dark:bg-gray-900 text-white flex ">
                 <Context>
-                    <Sidebar
-                        handleMenuClick={handleMenuClick}
-                        isMenuOpen={isMenuOpen}
-                    ></Sidebar>
+                    <ThemeProvider attribute="class">
+                        <Sidebar
+                            handleMenuClick={handleMenuClick}
+                            isMenuOpen={isMenuOpen}
+                        ></Sidebar>
+                    </ThemeProvider>
 
                     <div className="overflow-hidden w-screen">
                         <Header
