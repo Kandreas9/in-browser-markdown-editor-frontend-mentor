@@ -9,7 +9,11 @@ export default function SidebarContent({ document }) {
                 <Image alt="file" src={file} height={16} width={14}></Image>
                 <div className="flex flex-col gap-[3px]">
                     <span className="font-roboto text-gray-400 text-[13px]">
-                        {document.date.getYear()}
+                        {document.date.getDate()}{" "}
+                        {document.date.toLocaleString("default", {
+                            month: "long",
+                        })}{" "}
+                        {document.date.getFullYear()}
                     </span>
                     <span className="text-white text-[15px] font-roboto">
                         {document.name}
