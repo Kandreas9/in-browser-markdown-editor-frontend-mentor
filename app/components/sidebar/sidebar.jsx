@@ -16,9 +16,9 @@ export default function Sidebar({ isMenuOpen }) {
             }`}
         >
             {isMenuOpen && (
-                <div className="px-[24px] w-[250px] h-full flex flex-col justify-between">
+                <div className="px-[24px] w-[250px] h-full flex flex-col justify-between pt-[27px]">
                     <div>
-                        <h1 className="py-[27px]">
+                        <h1 className="pb-[27px] xl:hidden">
                             <Image
                                 alt="logo"
                                 src={md}

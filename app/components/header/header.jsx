@@ -4,6 +4,7 @@ import exit from "../../../public/exit.svg";
 import trash from "../../../public/trash.svg";
 import FileRename from "./fileRename";
 import SaveButton from "../saveButton";
+import md from "../../../public/md.svg";
 
 import { useState } from "react";
 import DeleteModal from "../modal/deleteModal";
@@ -42,6 +43,14 @@ export default function Header({ handleMenuClick, isMenuOpen }) {
             )}
 
             <div className="flex flex-1 justify-between items-center">
+                <h1 className="xl:pl-[24px] xl:pr-[29px] hidden xl:block ">
+                    <Image
+                        className="xl:h-[18px] xl:w-[131px]"
+                        alt="logo"
+                        src={md}
+                    ></Image>
+                </h1>
+
                 <FileRename></FileRename>
 
                 <div className="flex gap-[24px] mr-[8px]">

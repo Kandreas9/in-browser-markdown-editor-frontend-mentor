@@ -10,7 +10,6 @@ export default function Home({ params }) {
     useEffect(() => {
         const doc = documents.find((e) => e.id == params.id);
         if (doc) {
-            console.log("Actual update", doc);
             setDocs(doc);
         }
     }, [documents]);
