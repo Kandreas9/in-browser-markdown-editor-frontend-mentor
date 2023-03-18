@@ -5,7 +5,16 @@ import trash from "../../../public/trash.svg";
 import FileRename from "./fileRename";
 import SaveButton from "../saveButton";
 
+import { useState } from "react";
+import DeleteModal from "../modal/deleteModal";
+
 export default function Header({ handleMenuClick, isMenuOpen }) {
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+    const handleModalChange = (bool) => {
+        setIsDeleteModalOpen(bool);
+    };
+
     return (
         <header className="flex bg-gray-700 w-screen">
             {isMenuOpen ? (
@@ -28,16 +37,24 @@ export default function Header({ handleMenuClick, isMenuOpen }) {
                 <FileRename></FileRename>
 
                 <div className="flex gap-[24px] mr-[8px]">
-                    <Image
-                        alt="trash"
-                        src={trash}
-                        height={20}
-                        width={18}
-                    ></Image>
+                    <button onClick={() => handleModalChange(true)}>
+                        <Image
+                            alt="trash"
+                            src={trash}
+                            height={20}
+                            width={18}
+                        ></Image>
+                    </button>
 
                     <SaveButton></SaveButton>
                 </div>
             </div>
+
+            {isDeleteModalOpen && (
+                <DeleteModal
+                    handleModalChange={handleModalChange}
+                ></DeleteModal>
+            )}
         </header>
     );
 }

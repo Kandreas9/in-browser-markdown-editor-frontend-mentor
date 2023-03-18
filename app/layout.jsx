@@ -38,6 +38,8 @@ export default function RootLayout({ children }) {
                         ></Header>
                         {children}
                     </div>
+
+                    <div id="portal" />
                 </Context>
             </body>
         </html>

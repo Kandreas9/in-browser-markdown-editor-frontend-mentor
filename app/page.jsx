@@ -14,5 +14,9 @@ export default function NewDocument() {
         });
     }, []);
 
-    return <MarkdownViewMode></MarkdownViewMode>;
+    return (
+        <>
+            <MarkdownViewMode></MarkdownViewMode>
+        </>
+    );
 }

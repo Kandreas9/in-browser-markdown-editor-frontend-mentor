@@ -17,7 +17,8 @@ export default function FileRename() {
                         font-roboto 
                         font-bold 
                         text-[15px] 
-                        text-white w-[86px] 
+                        text-white 
+                        w-auto 
                         focus:border-b-[1px] 
                         hover:border-b-[1px] 
                         focus:border-b-white 
@@ -25,8 +26,13 @@ export default function FileRename() {
                         outline-0
                     "
                     type="text"
-                    value={docs.name}
-                    onChange={(e) => setDocs({ ...docs, name: e.target.value })}
+                    value={`${docs.name}.md`}
+                    onChange={(e) =>
+                        setDocs({
+                            ...docs,
+                            name: e.target.value.replace(".md", ""),
+                        })
+                    }
                     placeholder="welcome.md"
                 />
             </label>
