@@ -17,7 +17,7 @@ export default function Header({ handleMenuClick, isMenuOpen }) {
     };
 
     return (
-        <header className="flex bg-gray-700 w-screen">
+        <header className="flex bg-gray-700 w-screen max-w-[1440px] mx-auto">
             {isMenuOpen ? (
                 <button
                     onClick={() => handleMenuClick(false)}
