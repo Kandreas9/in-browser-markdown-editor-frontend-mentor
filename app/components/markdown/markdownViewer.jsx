@@ -13,7 +13,6 @@ import { nord } from "@milkdown/theme-nord";
 import { Milkdown, useEditor } from "@milkdown/react";
 import { replaceAll } from "@milkdown/utils";
 import { commonmark } from "@milkdown/preset-commonmark";
-// import { listener, listenerCtx } from "@milkdown/plugin-listener";
 
 export default function MarkdownViewer() {
     const { docs } = useContext(Docs);
@@ -27,7 +26,7 @@ export default function MarkdownViewer() {
                 ctx.update(editorViewOptionsCtx, (prev) => ({
                     ...prev,
                     attributes: {
-                        class: "flex-1 h-full prose dark:prose-invert font-robotoSlab",
+                        class: "flex-1 mx-auto max-w-[672px] h-full prose dark:prose-invert font-robotoSlab",
                     },
                     editable: () => false,
                 }));

@@ -10,7 +10,7 @@ export default function MarkdownViewMode() {
     const [isViewerOpen, setIsViewerOpen] = useState(false);
 
     return (
-        <main className="markdownViewer md:flex relative w-screen">
+        <main className="markdownViewer md:flex relative w-screen max-w-[1440px] mx-auto">
             <div className="h-full w-full md:w-1/2 flex flex-col border-r dark:border-gray-500 border-gray-200">
                 <div className="flex-none bg-gray-100 w-full dark:bg-gray-800 py-[14px] px-[16px] flex justify-between">
                     <h2 className="font-roboto font-medium text-gray-400 dark:text-gray-300 tracking-[2px] text-[14px]">
