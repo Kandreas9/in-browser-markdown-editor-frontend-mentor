@@ -28,7 +28,7 @@ export default function Sidebar({ isMenuOpen }) {
                         </h1>
 
                         <div className="mb-[29px]">
-                            <h2 className="text-gray-400 font-roboto text-[14px]">
+                            <h2 className="text-gray-400 font-medium font-roboto text-[14px]">
                                 MY DOCUMENTS
                             </h2>
                         </div>
