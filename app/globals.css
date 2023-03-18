@@ -4,20 +4,21 @@
 
 div[data-milkdown-root] {
     flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    width: 100%;
+    height: 100%;
 }
 
 .milkdown {
-    width: 100%;
-    height: 100%;
-    padding: 16px;
     overflow-wrap: break-word;
 }
 
-.dark .milkdown {
+.dark div[data-milkdown-root] {
     background: #151619;
 }
 
-.light .milkdown {
+.light div[data-milkdown-root] {
     background: white;
 }
 

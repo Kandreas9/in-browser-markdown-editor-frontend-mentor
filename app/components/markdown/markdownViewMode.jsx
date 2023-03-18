@@ -27,7 +27,7 @@ export default function MarkdownViewMode() {
             </div>
 
             <div
-                className={`w-full flex flex-col overflow-y-auto h-full absolute z-10 top-0 transition-all ${
+                className={`w-full flex flex-col h-full absolute z-10 top-0 transition-all ${
                     isViewerOpen ? "left-0" : "left-full"
                 }`}
             >
