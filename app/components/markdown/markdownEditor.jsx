@@ -5,7 +5,7 @@ export default function MarkdownEditor() {
     const { docs, setDocs } = useContext(Docs);
 
     return (
-        <div className="flex-1 w-screen">
+        <div className="flex-1 w-full">
             <textarea
                 value={docs.content}
                 onChange={(e) => setDocs({ ...docs, content: e.target.value })}

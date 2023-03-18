@@ -31,7 +31,7 @@ export default function DeleteModal({ handleModalChange }) {
               <>
                   <div
                       onClick={() => handleModalChange(false)}
-                      className="absolute bg-gray-900 dark:bg-gray-400 top-0 left-0 w-screen h-screen opacity-50"
+                      className="z-20 absolute bg-gray-900 dark:bg-gray-400 top-0 left-0 w-screen h-screen opacity-50"
                   ></div>
                   <section className="flex flex-col gap-[16px] p-[24px] rounded-[4px] w-[343px] h-[218px] z-20 bg-white dark:bg-gray-800 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
                       <h2 className="text-gray-600 font-bold dark:text-white font-robotoSlab text-[20px]">

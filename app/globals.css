@@ -6,7 +6,7 @@ div[data-milkdown-root] {
     flex: 1;
     overflow-y: auto;
     padding: 16px;
-    width: 100vw;
+    width: 100%;
     height: 100%;
 }
 
@@ -41,4 +41,14 @@ div[data-milkdown-root] {
 
 .dark .sun {
     color: #5a6069;
+}
+
+.markdownViewer {
+    height: calc(100vh - 56px);
+}
+
+@media (min-width: 768px) {
+    .markdownViewer {
+        height: calc(100vh - 72px);
+    }
 }
