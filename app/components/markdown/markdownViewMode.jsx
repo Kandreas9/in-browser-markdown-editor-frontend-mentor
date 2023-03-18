@@ -13,7 +13,7 @@ export default function MarkdownViewMode() {
     return (
         <main style={{ height: "calc(100vh - 56px)" }} className="relative">
             <div className="h-full flex flex-col">
-                <div className="flex-none bg-gray-100 dark:bg-gray-800 py-[14px] px-[16px] flex justify-between">
+                <div className="flex-none bg-gray-100 w-screen dark:bg-gray-800 py-[14px] px-[16px] flex justify-between">
                     <h2 className="font-roboto font-medium text-gray-400 dark:text-gray-300 tracking-[2px] text-[14px]">
                         MARKDOWN
                     </h2>
@@ -31,7 +31,7 @@ export default function MarkdownViewMode() {
                     isViewerOpen ? "left-0" : "left-full"
                 }`}
             >
-                <div className="flex-none bg-gray-100 dark:bg-gray-800 py-[14px] px-[16px] flex justify-between">
+                <div className="flex-none w-screen bg-gray-100 dark:bg-gray-800 py-[14px] px-[16px] flex justify-between">
                     <h2 className="font-roboto font-medium text-gray-400 dark:text-gray-300 tracking-[2px] text-[14px]">
                         PREVIEW
                     </h2>
